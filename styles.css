@@ -21,6 +21,7 @@ body{
     border-radius: 10%;
     box-shadow: var(--app-box-shadow);
     background-color: var(--app-bg-color);
+    max-width: 430px;
 
 }
 
@@ -89,20 +90,20 @@ form{
     background-color: var(--todo-hover-bg-color);
   }
 
-#todos-list .todo * {
-    cursor: pointer;
-    margin-right: 0.5rem;
-  }
+
 
 .todo {
     display: flex;
+    justify-content: space-between;
     padding: .5rem;
     border-radius: 10px;
     margin: 5px;
+    margin-bottom: 8px;
     height: 3rem;
     align-items: center;
-    justify-content: space-evenly;
     font-size: larger;
+    max-width: 340px;
+
 
     background-color: var(--todo-bg-color);
     color: var(--todo-color);
@@ -141,20 +142,41 @@ form{
 
   } */
 
+
+
+  #todos-list .todo p{
+
+    width: 230px;
+    overflow: scroll;
+    overflow-y: hidden; 
+    overflow-x: hidden; 
+
+  }
+
   #todos-list .todo .bi-trash {
-    margin: 0;
     color: var(--todo-color);
+    cursor: pointer;
+    margin-right: 0.5rem;
+
   }
 
   #todos-list .todo .bi-pencil-square {
     color: var(--todo-color);
+    cursor: pointer;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
   }
 
   #todos-list .todo .bi-circle {
+    cursor: pointer;
+    margin-right: 0.2rem;
     color: var(--todo-color); 
+
   }
 
   #todos-list .todo .bi-check-circle-fill{
+    cursor: pointer;
+    margin-right: 0.2rem;
     color: var(--todo-color);
   }
 
@@ -178,20 +200,29 @@ form{
 
 :root, /* here i make my own variable names */
     :root.pink {
-      --newtodo-bg-color: rgb(219, 76, 124);
-      --newtodo-color: rgb(255, 96, 194);
+      --newtodo-bg-color: rgb(190, 72, 111);
+      --newtodo-color: rgb(255, 43, 174);
       --newtodo-border-color: 1px hotpink solid;
-      --h-color: rgb(255, 75, 159);
+      --h-color: rgb(255, 168, 209);
       --divider-bg-color:rgb(252, 107, 179, .5);
       --add-color:rgb(255, 91, 173);
-      --placeholder-color: rgb(167, 41, 81, .6);
-      --body-bg-color: linear-gradient(40deg, rgb(71, 64, 66), 
-        palevioletred, rgb(55, 53, 70));
+      --placeholder-color: rgb(192, 127, 149);
+      /* --body-bg-color: linear-gradient(40deg, rgb(71, 64, 66), 
+        palevioletred, rgb(55, 53, 70)); */
+        --body-bg-color: linear-gradient(40deg, rgba(0,0,0,1) 13%,
+       rgb(212, 97, 135) 30%, palevioletred 46%, palevioletred
+        62%, rgb(236, 126, 163) 71%, rgba(0,0,0,1) 88%);
        --app-bg-color: rgba(206, 40, 117, 0.4);
        --app-box-shadow: 0 0 5px 5px hotpink;
        --todo-bg-color: rgba(206, 40, 117, 0.5);
-       --todo-color: rgb(252, 86, 169);
+       --todo-color: rgb(243, 146, 194);
        --todo-hover-bg-color: rgba(173, 33, 99, 0.4);
+       --scrollbar-width: .8vw;
+       --scrollbar-border: 2px solid rgb(236, 52, 144);
+       --scrollbar-thumb: rgb(236, 52, 144);
+       --scrollbar-track: rgb(240, 116, 178);
+       --scrollbar-button: rgb(236, 52, 144);
+  
 
     }
 
@@ -211,6 +242,12 @@ form{
      --todo-bg-color: rgba(4, 161, 4, 0.2);
      --todo-color: rgb(8, 204, 8);
      --todo-hover-bg-color: rgba(5, 139, 5, 0.2);
+     --scrollbar-width: .8vw;
+     --scrollbar-border: 2px solid green;
+     --scrollbar-thumb: green;
+     --scrollbar-track:limegreen;
+     --scrollbar-button: green;
+
     }
 
 
@@ -230,23 +267,62 @@ form{
 
 /*CUSTOM SCROLL BAR */
 html::-webkit-scrollbar{
-  width: .8vw;
-  border: 2px solid rgb(236, 52, 144);
+  width: var(--scrollbar-width);
+  border: var(--scrollbar-border);
 }
 
 
 html::-webkit-scrollbar-thumb{
-  background-color: rgb(236, 52, 144);
+  background-color: var(--scrollbar-thumb);
 }
 
 
 html::-webkit-scrollbar-track{
-  background-color: rgb(240, 116, 178);
+  background-color: var(--scrollbar-track);
 }
 
 
 html::-webkit-scrollbar-button{
-  background-color: rgb(236, 52, 144)
+  background-color: var(--scrollbar-button);
  
 }
+
+/* FOR MOBILE VIEW */
+@media all and (max-width:475px){
+  .app{
+    max-width: 310px;
+    padding: 15px
+  }
+
+  h1{
+    font-size: 22px;
+    margin-left: 10px;
+  }
+
+  h2{
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  #newtodo{
+    width: 250px;
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  #add-task{
+    font-size: 26px;
+  }
+
+  #add-task:hover{
+    font-size: 30px;
+  }
+
+  .todo{
+    height: 2.5rem;
+    font-size: 17px;
+  }
+  
+}
+
 

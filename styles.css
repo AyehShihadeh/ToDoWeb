@@ -1,0 +1,252 @@
+/* The * selector selects all elements. */
+*{ 
+    box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0,0,0);
+    background: linear-gradient(40deg, rgba(0,0,0,1) 13%, rgba(62,133,44,1) 30%, rgba(9,78,10,1) 46%, rgba(78,164,56,1) 62%, rgba(106,185,87,1) 71%, rgba(0,0,0,1) 88%);
+    min-height: 100vh;
+    flex-direction: column;
+
+    background: var(--body-bg-color);
+}
+
+.app{
+    padding: 2rem;
+    border-radius: 10%;
+    box-shadow: var(--app-box-shadow);
+    background-color: var(--app-bg-color);
+
+}
+
+.container h1{
+    color: var(--h-color);
+}
+
+.container h2{
+    color: var(--h-color);
+}
+
+.divider{
+    height: 3px;
+    width: auto;
+    border-radius: 30%;
+    margin: 20px;
+
+    background-color: var(--divider-bg-color);
+}
+
+#newtodo{
+    border-radius: 40px;
+    font-size: 20px;
+    padding: 1rem 1.5rem;
+    outline: none;
+
+    background-color: var(--newtodo-bg-color);
+    color: var(--newtodo-color);
+    border: var(--newtodo-border-color);
+
+
+}
+
+#newtodo::placeholder{
+    color: var(--placeholder-color); 
+}
+
+#add-task{
+    background: none;
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+
+    color: var(--add-color);
+
+}
+
+form{
+    display: flex;
+    align-items: center;
+}
+
+
+#add-task:hover{
+    font-size: 35px;
+    cursor: pointer;
+}
+
+
+#todos-list{
+    padding: .3rem;
+    overflow: hidden;
+}
+
+#todos-list .todo:hover{
+    background-color: var(--todo-hover-bg-color);
+  }
+
+#todos-list .todo * {
+    cursor: pointer;
+    margin-right: 0.5rem;
+  }
+
+.todo {
+    display: flex;
+    padding: .5rem;
+    border-radius: 10px;
+    margin: 5px;
+    height: 3rem;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: larger;
+
+    background-color: var(--todo-bg-color);
+    color: var(--todo-color);
+    
+}
+
+.checked {
+    text-decoration: line-through;
+    color: grey;
+  }
+
+
+/* .notification {
+    position: absolute;
+    width: calc(3 * var(--contaier-width) / 4);
+    height: 50px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    opacity: 0.9;
+  
+    border-radius: 8px;
+    background-color: rgb(202, 103, 136);
+    right: calc(-3 * var(--contaner-width) / 4);
+    top: 4px;
+  
+    color: #3a3434;
+  
+    transition: 300ms ease-out;
+  }
+
+  .notif-enter{
+    right:10px;
+
+  } */
+
+  #todos-list .todo .bi-trash {
+    margin: 0;
+    color: var(--todo-color);
+  }
+
+  #todos-list .todo .bi-pencil-square {
+    color: var(--todo-color);
+  }
+
+  #todos-list .todo .bi-circle {
+    color: var(--todo-color); 
+  }
+
+  #todos-list .todo .bi-check-circle-fill{
+    color: var(--todo-color);
+  }
+
+
+.theme-btn {
+    width: 3em;
+    height: 3em;
+    padding: 0.5em;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+
+.theme-btn img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+:root, /* here i make my own variable names */
+    :root.pink {
+      --newtodo-bg-color: rgb(219, 76, 124);
+      --newtodo-color: rgb(255, 96, 194);
+      --newtodo-border-color: 1px hotpink solid;
+      --h-color: rgb(255, 75, 159);
+      --divider-bg-color:rgb(252, 107, 179, .5);
+      --add-color:rgb(255, 91, 173);
+      --placeholder-color: rgb(167, 41, 81, .6);
+      --body-bg-color: linear-gradient(40deg, rgb(71, 64, 66), 
+        palevioletred, rgb(55, 53, 70));
+       --app-bg-color: rgba(206, 40, 117, 0.4);
+       --app-box-shadow: 0 0 5px 5px hotpink;
+       --todo-bg-color: rgba(206, 40, 117, 0.5);
+       --todo-color: rgb(252, 86, 169);
+       --todo-hover-bg-color: rgba(173, 33, 99, 0.4);
+
+    }
+
+   :root.green {
+    --newtodo-bg-color: green;
+    --newtodo-color: lime;
+    --newtodo-border-color: 1px lime solid;
+    --h-color: limegreen;
+    --divider-bg-color:limegreen;
+    --add-color:greenyellow;
+    --placeholder-color: rgb(9, 95, 9);
+    --body-bg-color: linear-gradient(40deg, rgba(0,0,0,1) 13%,
+     rgba(62,133,44,1) 30%, rgba(9,78,10,1) 46%, rgba(78,164,56,1)
+     62%, rgba(106,185,87,1) 71%, rgba(0,0,0,1) 88%);
+     --app-bg-color: rgba(34, 30, 34, 0.3);
+     --app-box-shadow: 0 0 5px 5px lime;
+     --todo-bg-color: rgba(4, 161, 4, 0.2);
+     --todo-color: rgb(8, 204, 8);
+     --todo-hover-bg-color: rgba(5, 139, 5, 0.2);
+    }
+
+
+  .theme-btn.pink {
+      display: none;
+    }
+
+  .green .theme-btn.pink {
+      display: block;
+    }
+
+  .green .theme-btn.green {
+      display: none;
+    }
+
+
+
+/*CUSTOM SCROLL BAR */
+html::-webkit-scrollbar{
+  width: .8vw;
+  border: 2px solid rgb(236, 52, 144);
+}
+
+
+html::-webkit-scrollbar-thumb{
+  background-color: rgb(236, 52, 144);
+}
+
+
+html::-webkit-scrollbar-track{
+  background-color: rgb(240, 116, 178);
+}
+
+
+html::-webkit-scrollbar-button{
+  background-color: rgb(236, 52, 144)
+ 
+}
+

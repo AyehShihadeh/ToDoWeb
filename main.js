@@ -80,7 +80,7 @@ function renderTodos(){
         todosListElement.innerHTML += `
         <div class="todo" id=${index}>
             <i class="bi ${todo.checked ? 'bi-check-circle-fill' : 'bi-circle'}" data-action="check"></i>
-            <p class="${todo.checked ? 'checked' : ''}" data-action="check">${todo.value}</p>
+            <p class="${todo.checked ? 'checked' : ''}" >${todo.value}</p>
             <i class="bi bi-pencil-square" data-action="edit"></i>
             <i class="bi bi-trash" data-action="delete"></i>
         </div> 

@@ -86,6 +86,7 @@ form{
     overflow: hidden;
 }
 
+
 #todos-list .todo:hover{
     background-color: var(--todo-hover-bg-color);
   }
@@ -95,14 +96,14 @@ form{
 .todo {
     display: flex;
     justify-content: space-between;
-    padding: .5rem;
+    padding: .3rem;
     border-radius: 10px;
     margin: 5px;
     margin-bottom: 8px;
-    height: 3rem;
+    
     align-items: center;
     font-size: larger;
-    max-width: 340px;
+    max-width: 350px;
 
 
     background-color: var(--todo-bg-color);
@@ -116,41 +117,33 @@ form{
   }
 
 
-/* .notification {
-    position: absolute;
-    width: calc(3 * var(--contaier-width) / 4);
-    height: 50px;
+ .notification {
+    width: auto;
+    height: 30px;
   
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+
   
-    opacity: 0.9;
-  
-    border-radius: 8px;
-    background-color: rgb(202, 103, 136);
-    right: calc(-3 * var(--contaner-width) / 4);
-    top: 4px;
-  
-    color: #3a3434;
+    color: yellow;
   
     transition: 300ms ease-out;
   }
 
   .notif-enter{
-    right:10px;
+    color: white;
 
-  } */
+  } 
 
 
 
   #todos-list .todo p{
-
-    width: 230px;
-    overflow: scroll;
-    overflow-y: hidden; 
-    overflow-x: hidden; 
-
+    width: 230px; 
+    word-wrap: break-word;
+    white-space: normal;
+    margin: 0px;  
   }
 
   #todos-list .todo .bi-trash {
@@ -287,6 +280,30 @@ html::-webkit-scrollbar-button{
  
 }
 
+/* p::-webkit-scrollbar{
+  width: var(--scrollbar-width);
+  border: var(--scrollbar-border);
+
+}
+
+p::-webkit-scrollbar-thumb{
+  width: var(--scrollbar-width);
+  border: var(--scrollbar-border);
+
+}
+
+p::-webkit-scrollbar-track{
+  width: var(--scrollbar-width);
+  border: var(--scrollbar-border);
+
+}
+
+p::-webkit-scrollbar-button{
+  width: var(--scrollbar-width);
+  border: var(--scrollbar-border);
+
+} */
+
 /* FOR MOBILE VIEW */
 @media all and (max-width:475px){
   .app{
@@ -319,9 +336,13 @@ html::-webkit-scrollbar-button{
   }
 
   .todo{
-    height: 2.5rem;
     font-size: 17px;
   }
+
+  #todos-list .todo p{
+    width: 180px; 
+  }
+
   
 }
 

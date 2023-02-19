@@ -153,6 +153,6 @@ function showNotification(msg){
     //notification leaves
     setTimeout(() => {
         notificationElement.classList.remove('notif-enter');
-    }, 2000);
+    }, 4000);
 
 }

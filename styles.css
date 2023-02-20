@@ -118,24 +118,17 @@ form{
 
 
  .notification {
-    width: auto;
-    height: 30px;
-  
+    width: 130px;
+    height: auto;
+    margin-top: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.432);
+    border-radius: 5px;
 
-  
-    color: yellow;
-  
-    transition: 300ms ease-out;
-  }
-
-  .notif-enter{
     color: white;
-
-  } 
+  }
 
 
 
@@ -241,6 +234,7 @@ form{
      --scrollbar-track:limegreen;
      --scrollbar-button: green;
 
+
     }
 
 
@@ -280,29 +274,7 @@ html::-webkit-scrollbar-button{
  
 }
 
-/* p::-webkit-scrollbar{
-  width: var(--scrollbar-width);
-  border: var(--scrollbar-border);
 
-}
-
-p::-webkit-scrollbar-thumb{
-  width: var(--scrollbar-width);
-  border: var(--scrollbar-border);
-
-}
-
-p::-webkit-scrollbar-track{
-  width: var(--scrollbar-width);
-  border: var(--scrollbar-border);
-
-}
-
-p::-webkit-scrollbar-button{
-  width: var(--scrollbar-width);
-  border: var(--scrollbar-border);
-
-} */
 
 /* FOR MOBILE VIEW */
 @media all and (max-width:475px){
@@ -345,5 +317,3 @@ p::-webkit-scrollbar-button{
 
   
 }
-
-

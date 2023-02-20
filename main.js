@@ -4,6 +4,7 @@ const todoInput = document.getElementById("newtodo");
 const todosListElement = document.getElementById("todos-list");
 const notificationElement = document.querySelector('.notification');
 
+
 //storing a user’s selected theme in local storage so the page takes the -
 // chosen theme by default every time they visit
 const setTheme = (theme) => {
@@ -47,9 +48,9 @@ function saveTodo(){
     const isDuplicate = todos.some((todo) => todo.value.toUpperCase() === todoValue.toUpperCase());
 
     if(isEmpty){
-        showNotification("Todo's input is empty!");
+        showNotification("todo is empty!");
     }else if(isDuplicate){
-        showNotification("Todo is already on list!");
+        showNotification("todo already exists!");
     }else{
         if(EditTodoId >= 0){
             // update the edit todo
@@ -148,11 +149,13 @@ function showNotification(msg){
     notificationElement.innerHTML = msg;
 
     //notification enter
-    notificationElement.classList.add('notif-enter');
+    notificationElement.classList.add('notification');
 
     //notification leaves
     setTimeout(() => {
-        notificationElement.classList.remove('notif-enter');
-    }, 4000);
+        notificationElement.innerHTML = "";
+        notificationElement.classList.remove('notification');
+
+    }, 3000);
 
 }
